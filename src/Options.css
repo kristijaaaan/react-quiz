@@ -1,0 +1,36 @@
+.quiz__answers {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quiz__answers > button {
+  padding: 15px;
+  width: 100%;
+  background-color: lightgray;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  text-align: left;
+  font-size: 18px;
+}
+
+.quiz__answered {
+  transform: translateX(20px);
+  /* background-color: rgb(234, 234, 234) !important; */
+}
+
+.quiz__answers > button:disabled {
+  color: black;
+}
+
+.answer__correct {
+  background-color: green !important;
+}
+
+.answer__incorrect {
+  background-color: red !important;
+}
