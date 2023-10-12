@@ -1,9 +1,8 @@
 import "./StartScreen.css";
 import { useDispatch, useSelector } from "react-redux";
 import { startGame } from "./quizSlice";
-import { maxPoints } from "./questions";
 
-export default function StartScreen() {
+export default function StartScreen({ maxPoints }) {
   const { points, status, highscore } = useSelector((state) => state.quiz);
   const dispatch = useDispatch();
 

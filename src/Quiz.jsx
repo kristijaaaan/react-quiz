@@ -1,11 +1,10 @@
 import "./Quiz.css";
 import { useSelector } from "react-redux";
-import { questions, maxPoints } from "./questions";
 import { useDispatch } from "react-redux";
 import { nextQuestion, finishGame } from "./quizSlice";
 import Options from "./Options";
 
-export default function Quiz() {
+export default function Quiz({ questions, maxPoints }) {
   const { question, points, answer } = useSelector((state) => state.quiz);
   const currentQuestion = questions[question];
   const dispatch = useDispatch();
