@@ -10,8 +10,10 @@ export default function StartScreen() {
   return (
     <div className="startScreen">
       <div className="startScreen__container">
-        <h1>Welcome to the React Quiz</h1>
-        <h3>Here you can check your React knowledge</h3>
+        <h1>
+          Welcome to the <span>React Quiz</span>
+        </h1>
+        {status === "ready" && <h3>Here you can check your React knowledge</h3>}
         {status === "finished" && (
           <>
             <h4>

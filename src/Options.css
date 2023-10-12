@@ -15,12 +15,11 @@
   cursor: pointer;
   border: none;
   text-align: left;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .quiz__answered {
-  transform: translateX(20px);
-  /* background-color: rgb(234, 234, 234) !important; */
+  transform: translateX(10px);
 }
 
 .quiz__answers > button:disabled {
@@ -28,9 +27,17 @@
 }
 
 .answer__correct {
-  background-color: green !important;
+  background-color: rgb(0, 159, 0) !important;
+  color: white !important;
 }
 
 .answer__incorrect {
-  background-color: red !important;
+  background-color: rgba(255, 0, 0, 0.8) !important;
+  color: white !important;
+}
+
+@media screen and (min-width: 1100px) {
+  .quiz__answers > button {
+    font-size: 18px;
+  }
 }
