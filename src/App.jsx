@@ -1,27 +1,25 @@
 import StartScreen from "./StartScreen";
 import Quiz from "./Quiz";
 
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { useState } from "react";
+import { fetchQuestions } from "./quizSlice";
 
 export default function App() {
-  const [questions, setQuestions] = useState([]);
-  const maxPoints = questions?.reduce(
-    (acc, current) => acc + current.points,
-    0
-  );
-  const { status } = useSelector((state) => state.quiz);
+  const { status, questions } = useSelector((state) => state.quiz);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch(`https://6528086c931d71583df1c56c.mockapi.io/questions`)
-      .then((res) => res.json())
-      .then((data) => setQuestions(data));
-  }, []);
+    dispatch(fetchQuestions());
+  }, [dispatch]);
+
+  const maxPoints = questions?.reduce(
+    (acc, question) => acc + question.points,
+    0
+  );
 
   if (status === "ready" || status === "finished")
     return <StartScreen maxPoints={maxPoints} />;
 
-  if (status === "active")
-    return <Quiz questions={questions} maxPoints={maxPoints} />;
+  if (status === "active") return <Quiz maxPoints={maxPoints} />;
 }

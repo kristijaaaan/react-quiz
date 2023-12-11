@@ -43,3 +43,14 @@ h4 {
   margin-top: 20px;
   font-size: 25px;
 }
+
+@media screen and (max-width: 500px) {
+  .startScreen__container > h1 > span {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+}

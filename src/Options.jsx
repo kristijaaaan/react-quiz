@@ -1,6 +1,6 @@
+import "./Options.css";
 import { useDispatch } from "react-redux";
 import { answerCorrect, answerQuestion } from "./quizSlice";
-import "./Options.css";
 
 function Options({ currentQuestion, answer }) {
   const dispatch = useDispatch();
@@ -10,10 +10,11 @@ function Options({ currentQuestion, answer }) {
       {currentQuestion.options.map((option, i) => (
         <button
           className={`${i === answer ? "quiz__answered" : ""} ${
-            answer !== null &&
-            (i === currentQuestion.correctOption
-              ? "answer__correct"
-              : "answer__incorrect")
+            answer !== null
+              ? i === currentQuestion.correctOption
+                ? "answer__correct"
+                : "answer__incorrect"
+              : ""
           }`}
           disabled={answer !== null}
           key={option}

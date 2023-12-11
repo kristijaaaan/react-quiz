@@ -10,9 +10,11 @@ export default function StartScreen({ maxPoints }) {
     <div className="startScreen">
       <div className="startScreen__container">
         <h1>
-          Welcome to the <span>React Quiz</span>
+          Welcome to the <span>General Knowledge Quiz</span>
         </h1>
-        {status === "ready" && <h3>Here you can check your React knowledge</h3>}
+        {status === "ready" && (
+          <h3>Here you can test your knowledge about random stuff</h3>
+        )}
         {status === "finished" && (
           <>
             <h4>
